@@ -1,5 +1,7 @@
 # Pitching Stats Analyzing Project
 
+2024131030 박규태
+
 2025-1학기 연세대학교 수학과 ‘수학과 프로그래밍’ 기말 프로젝트입니다.  
 파이썬의 pandas, matplotlib을 활용하여 KBO 팀 투수 스탯과 경기 승·패 간의 상관관계를 다각도로 분석합니다.
 
@@ -65,7 +67,7 @@
 
 이를 통해  
 1. 팀 운영 전략에 활용할 수 있는 “승리·패배 예측 인사이트”를 제시하고  
-2. 데이터 기반 의사결정(Data-Driven Decision Making)을 경험해 보고자 본 프로젝트를 기획하게 되었습니다.
+2. 데이터 기반 의사결정을 경험해 보고자 본 프로젝트를 기획하게 되었습니다.
 
 ## 실행 방법
 
@@ -86,7 +88,7 @@ raw Pickle 파일을 읽어 불필요 column을 제거하고,
 
 승·패와 모든 비율 지표 간 산점도를 `figures/all_scatter/` 폴더에 출력합니다.
 
-> ```python scripts/plot_all_scatter.py```
+> ```python scripts/analyze_scatter.py```
 
 ### 4. 상관계수 히트맵
 
