@@ -29,28 +29,38 @@
 
 Statiz 웹사이트에서 투수 통계 데이터를 가져와 data/raw/에 저장합니다.
 
-```python statiz_crawler.py```
+> ```python statiz_crawler.py```
 
 ### 2. 데이터 전처리
 
 raw Pickle 파일을 읽어 불필요 column을 제거하고,
 `피안타`, `피홈런` 등의 **누적 스탯**을 `경기당`, `9이닝당`, `타자당`의 **비율 스탯**으로 변환한 뒤 `data/processed`/에 저장합니다.
 
-```python preprocess.py```
+> ```python preprocess.py```
 
 ### 3. 산점도 자동 생성
 
 승·패와 모든 비율 지표 간 산점도를 `figures/all_scatter/` 폴더에 출력합니다.
 
-```python scripts/plot_all_scatter.py```
+> ```python scripts/plot_all_scatter.py```
 
 ### 4. 상관계수 히트맵
 
 피어슨 상관계수를 계산하고, ```figures/heatmaps/```에 세로 히트맵을 저장합니다.
 
-```python scripts/analyze_corr.py```
+> ```python scripts/analyze_corr.py```
 
 ### 5. 이미지 몽타주
 생성된 산점도 18장씩을 각각 한 장의 몽타주 이미지로 합쳐 figures/에 저장합니다.
 
-```python merge_images.py```
+> ```python merge_images.py```
+
+## 분석 결과
+
+![승리 대비 산점도](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/W_scatter_montage.png)
+
+![패배 대비 산점도](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/L_scatter_montage.png)
+
+![승리 피어슨 상관계수 히트맵](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/heatmaps/heatmap_W_all.png)
+
+![승리 피어슨 상관계수 히트맵](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/heatmaps/heatmap_L_all.png)
