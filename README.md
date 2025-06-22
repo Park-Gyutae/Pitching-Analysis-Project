@@ -57,10 +57,87 @@ raw Pickle 파일을 읽어 불필요 column을 제거하고,
 
 ## 분석 결과
 
-![승리 대비 산점도](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/W_scatter_montage.png)
+## 분석 결과
 
-![패배 대비 산점도](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/L_scatter_montage.png)
+### 산점도 몽타주
 
-![승리 피어슨 상관계수 히트맵](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/heatmaps/heatmap_W_all.png)
+* 승리 대비 산점도
 
-![승리 피어슨 상관계수 히트맵](https://github.com/Park-Gyutae/Pitching-Analysis-Project/blob/main/figures/heatmaps/heatmap_L_all.png)
+![승리 대비 산점도](https://raw.githubusercontent.com/Park-Gyutae/Pitching-Analysis-Project/main/figures/W_scatter_montage.png)  
+
+* 패배 대비 산점도
+
+![패배 대비 산점도](https://raw.githubusercontent.com/Park-Gyutae/Pitching-Analysis-Project/main/figures/L_scatter_montage.png)
+
+### 피어슨 상관계수 히트맵
+
+| ![승리 히트맵](https://raw.githubusercontent.com/Park-Gyutae/Pitching-Analysis-Project/main/figures/heatmaps/heatmap_W_all.png) | ![패배 히트맵](https://raw.githubusercontent.com/Park-Gyutae/Pitching-Analysis-Project/main/figures/heatmaps/heatmap_L_all.png) |
+| 승리(`W`)와 지표 간 상관 | 패배(`L`)와 지표 간 상관 |
+
+### 요약
+
+#### 승리(`W`)와 지표 간 상관
+
+* **강한 양의 상관** (r ≥ +0.40)
+
+    * `S_per_game`, `SO_per_batter`, `HD_per_game`
+
+* **중간 정도 양의 상관** (+0.30 ≤ r < +0.40)
+
+    * `SO_per_game`, `SO_per_9IP`
+
+* **거의 상관 없음** (|r| < 0.10)
+
+    * `XBH_per_batter`, `HR_per_batter`, `XBH_per_game`, `HR_per_9IP`
+
+* **강한 음의 상관** (r ≤ –0.40)
+
+    * `BB_per_9IP (–0.48)`, `BB_per_game (–0.46)`, `BB_per_batter (–0.44)`, `ER_per_9IP (–0.41)`, `ER_per_game (–0.39)`
+
+#### 패배(`L`)와 지표 간 상관
+
+* **매우 강한 양의 상관** (r ≥ +0.60)
+
+    * `ER_per_game`, `ER_per_9IP`
+
+* **매우 강한 양의 상관** (r ≥ +0.60)
+
+    * `H_per_9IP`, `H_per_game`, `H_per_batter`, `BB_per_9IP`
+
+* **거의 상관 없음** (|r| < 0.10)
+
+    * `SO_per_9IP`, `SO_per_game`, `SO_per_batter`
+
+* **강한 음의 상관** (r ≤ –0.60)
+
+    * `S_per_game`, `W`
+
+## 결론
+
+- **승리 예측 핵심 요인**  
+  - **양의 상관**  
+    - 세이브 경기 비율 (`S_per_game`)  
+    - 타자당 탈삼진 비율 (`SO_per_batter`)  
+    - 홀드 경기 비율 (`HD_per_game`)  
+  - **음의 상관**  
+    - 볼넷 비율 전반 (`BB_per_game`, `BB_per_9IP`, `BB_per_batter`)  
+    - 자책점 비율 (`ER_per_game`, `ER_per_9IP`)  
+
+- **패배 예측 핵심 요인**  
+  - **양의 상관**  
+    - 자책점 비율 전반 (`ER_per_game`, `ER_per_9IP`)  
+    - 피안타 비율 전반 (`H_per_game`, `H_per_9IP`, `H_per_batter`)  
+  - **음의 상관**  
+    - 세이브 경기 비율 (`S_per_game`)  
+    - 승리 수 (`W`)  
+
+- **예측력 낮은 지표**  
+  - 사구, 장타, 탈삼진 전반, 실책출루  
+  (`HP_per_*`, `XBH_per_*`, `SO_per_*`, `ROE`) 등은  
+  상관계수가 거의 0에 가까워 승패 예측에 크게 기여하지 않음
+
+> **시사점**  
+> - **불펜 성과 강화** (세이브·홀드·탈삼진)  
+> - **제구력 개선** (볼넷·자책점·피안타 최소화)  
+>  
+> 위 두 가지 전략이 팀의 승리 확률을 최고조로 끌어올리고, 패배 요인을 효과적으로 억제할 수 있습니다.
