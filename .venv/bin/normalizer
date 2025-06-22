@@ -1,0 +1,8 @@
+#!/Users/parkqed/QED/100_SCHOOL/120_연세대학교_학부/25-1_2학년-1학기/수학전공_수프밍/Fianl_Project/.venv/bin/python3
+# -*- coding: utf-8 -*-
+import re
+import sys
+from charset_normalizer import cli
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(cli.cli_detect())
